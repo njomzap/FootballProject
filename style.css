@@ -9,9 +9,8 @@ body {
 .main-content {
     padding: 20px 40px;
     text-align: center;
-    background: #fff;
+    background: #f4f4f9;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 40px auto;
     max-width: 900px;
     color: #1d3557;
@@ -24,6 +23,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
 }
+
 
 .navbar {
     position: fixed;
@@ -84,5 +84,16 @@ body {
     .navbar .nav-links a {
         font-size: 0.9em;
         padding: 8px 10px; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 15px 20px;
+    }
+
+    .main-content p {
+        font-size: 1em;
     }
 }

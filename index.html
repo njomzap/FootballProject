@@ -1,23 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUperliga e Kosovës</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superliga e Kosovës</title>
+
+
     <link rel="stylesheet" href="style.css">
-    </head>
-    <body class="home-page">
-        <div class="page-container">
+</head>
+<body class="home-page">
+    <div class="page-container">
         <div id="header-placeholder"></div>
+
+
+        <div class="main-content">
+            <h1>Superliga e Kosovës</h1>
+            <p>Live Results, Standings, and Updates</p>
+        </div>
+        <div class="navigation-controls">
+            <button id="prev" class="arrow">❮</button>
+            <button id="next" class="arrow">❯</button>
+        </div>
         
-    <div class="main-content">
-        <h1>Superliga e Kosovës</h1>
-        <p>Live Results, Standings, and Updates</p>
+    
+        <section id="recent-results" class="table-wrapper">
+            <h2>Recent Results</h2>
+            <div class="match-result">
+                <p>Team A <strong>3</strong> - <strong>1</strong> Team B</p>
+                <p>Date: 2023-12-01</p>
+            </div>
+            <div class="match-result">
+                <p>Team C <strong>2</strong> - <strong>2</strong> Team D</p>
+                <p>Date: 2023-12-01</p>
+            </div>
+        </section>
+    
+        <section id="upcoming-matches" class="table-wrapper">
+            <h2>Upcoming Matches</h2>
+            <div class="match">
+                <p>Team A vs Team C</p>
+                <p>Date: 2023-12-03 | Time: 20:00</p>
+            </div>
+            <div class="match">
+                <p>Team E vs Team G</p>
+                <p>Date: 2023-12-04 | Time: 18:00</p>
+            </div>
+        </section>
+        
+       
+        <section id="league-standings" class="table-wrapper">
+            <h2>League Standings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Team A</td>
+                        <td>45</td>
+                    </tr>
+                    <tr>
+                        <td>Team C</td>
+                        <td>42</td>
+                    </tr>
+                    <tr>
+                        <td>Team G</td>
+                        <td>40</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        
+        
+        
+        
+        
+       
+        <footer>
+            <p>&copy; 2023 Superliga e Kosovës. All rights reserved.</p>
+        </footer>
     </div>
-    <footer>
-        <p>&copy; 2023 Superliga e Kosovës. All rights reserved.</p>
-    </footer>
-</div>
+   
     <script src="script.js"></script>
 </body>
 </html>

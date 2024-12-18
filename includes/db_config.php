@@ -3,7 +3,7 @@ class dbConnect {
     private $host = "localhost";
     private $username = "root";
     private $password = "";
-    private $dbName = "furnituredb";
+    private $dbName = "superliga";
     private $conn =null;
 
     public function connect() {
@@ -17,13 +17,4 @@ class dbConnect {
         return $this->conn;
     }
 }
-
-$db = new dbConnect();
-$conn = $db->connect();
-
-if ($conn) {
-    echo "Connected successfully to the database!";
-} else {
-    echo "Connection failed.";
-}
-?>
+?> 

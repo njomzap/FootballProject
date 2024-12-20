@@ -63,4 +63,41 @@ class Users extends dbConnect {
     public function setIs_Admin($is_admin) {
         $this->is_admin = $is_admin;
     }
+    public function setUser() {
+        $sql = "INSERT INTO users (firstname, lastname, username, email, password, is_admin) VALUES (?, ?, ?, ?, ?, ?)";
+        $stmt = $this->dbconn->prepare($sql);
+        $stmt->execute([$this->firstname, $this->lastname, $this->username, $this->email, $this->password, $this->is_admin]);
+
+        return $this->dbconn->lastInsertId();
+    }
+    public function getUserByEmail($email) {
+        $sql = 'SELECT * FROM users WHERE email = :email';
+        $stmt = $this->dbconn->prepare($sql);
+        $stmt->execute([':email' => $email]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    public function userExists($username, $email) {
+        $sql = "SELECT * FROM users WHERE username = ? OR email = ?";
+        $stmt = $this->dbconn->prepare($sql);
+        $stmt->execute([$username, $email]);
+        return $stmt->rowCount() > 0;
+    }
+    public function updateUser($id) {
+        $sql = "UPDATE users SET firstname = ?, lastname = ?, username = ?, email = ?, pwd = ? WHERE id = ?";
+        $stmt = $this->dbconn->prepare($sql);
+        $stmt->execute([$this->firstname, $this->lastname, $this->username, $this->email, $this->password, $id]);
+        return $stmt->rowCount() > 0;
+    }
+    public function deleteUser($id) {
+        $sql = "DELETE FROM users WHERE id = ?";
+        $stmt = $this->dbconn->prepare($sql);
+        $stmt->execute([$id]);
+        return $stmt->rowCount() > 0;
+    }
+    public function getAllUsers() {
+        $sql = "SELECT * FROM users";
+        $stmt = $this->dbconn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

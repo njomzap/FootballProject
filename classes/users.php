@@ -1,6 +1,6 @@
 <?php
 
-require_once './includes/db_config.php';
+require_once '../includes/db_config.php';
 class Users extends dbConnect {
     private $id;
     private $firstname;

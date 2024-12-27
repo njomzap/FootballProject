@@ -45,35 +45,50 @@ if (isset($_POST['save'])) {
     <title>Register</title>
 </head>
 <body>
-   
-    <?php include('../helpers/header.html'); ?>
+    <div class="page-container">
+        <!-- Include Header -->
+        <?php include('../helpers/header.html'); ?>
 
-   
-    <?php if (!empty($error)) { ?>
-        <div class="error-message">
-            <p class="error"><?php echo htmlspecialchars($error); ?></p>
+        <!-- Registration Form -->
+        <div class="register-container">
+            <div class="form-box">
+                <h2>Register</h2>
+                <?php if (!empty($error)) { ?>
+                    <div class="error-message">
+                        <p class="error"><?php echo htmlspecialchars($error); ?></p>
+                    </div>
+                <?php } ?>
+                <form action="register.php" method="post">
+                    <div class="form-group">
+                        <label for="firstname">First Name</label>
+                        <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Choose a username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Create a password" required>
+                    </div>
+                    <button class="btn" name="save" type="submit">Register</button>
+                    <p>Already have an account? <a href="login.html">Login here</a></p>
+                </form>
+            </div>
         </div>
-    <?php } ?>
 
-    
-    <div class="content">
-        <h2>Register</h2>
+        <!-- Include Footer -->
+        <?php include('../helpers/footer.html'); ?>
     </div>
-    <section class="form-section">
-        <div class="form-container">
-            <form action="register.php" method="post" id="registerForm" name="registerForm">
-                <input type="text" name="firstname" placeholder="First Name" required>
-                <input type="text" name="lastname" placeholder="Last Name" required>
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <button name="save" type="submit">Register</button>
-            </form>
-        </div>
-        <p>Already registered? <a href="login.html">Login here</a></p>
-    </section>
-
-    <?php include('../helpers/footer.html'); ?>
 </body>
 </html>
+
 

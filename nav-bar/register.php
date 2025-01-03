@@ -21,12 +21,13 @@ if (isset($_POST['save'])) {
         $users = new Users();
         if (!$users->userExists($username, $email)) {
             $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-
+            $is_admin = ($email === 'admin@gmail.com') ? 1 : 0;
             $users->setFirstname($name);
             $users->setLastname($lastname);
             $users->setUsername($username);
             $users->setEmail($email);
             $users->setPassword($passwordHash);
+            $users->setIs_admin($is_admin);
 
             $users->setUser(); 
         } else {

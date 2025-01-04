@@ -81,7 +81,7 @@ if (isset($_POST['save'])) {
                         <input type="password" id="password" name="password" placeholder="Create a password" required>
                     </div>
                     <button class="btn" name="save" type="submit">Register</button>
-                    <p>Already have an account? <a href="login.html">Login here</a></p>
+                    <p>Already have an account? <a href="login.php">Login here</a></p>
                 </form>
             </div>
         </div>

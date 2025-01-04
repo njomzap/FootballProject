@@ -1,5 +1,4 @@
 <?php
-
 include '../includes/config.php';
 require_once('../classes/login.php');
 require_once('../classes/users.php');
@@ -18,7 +17,7 @@ if (isset($_POST['login'])) {
             $login = new Login($email, $password);
 
             if ($login->validateLogin()) {
-                // Set session variables
+                
                 session_start();
                 $_SESSION['user_email'] = $email;
                 $user = new Users();
@@ -30,7 +29,7 @@ if (isset($_POST['login'])) {
                 $_SESSION['is_admin'] = $userData['is_admin'];
                 $_SESSION['loggedin'] = true;
 
-                // Successful login but no redirection
+                
                 $successMessage = 'Login successful! You are now logged in.';
             } else {
                 $error = 'Invalid email or password.';
@@ -45,45 +44,43 @@ if (isset($_POST['login'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Login / Register</title>
+    <link rel="stylesheet" href="../style.css">
+    <title>Login</title>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <h1>Welcome to the Website</h1>
-        </div>
-    </header>
+    <div class="page-container">
+       
+        <?php include('../helpers/header.html'); ?>
 
-    <!-- Login Section -->
-    <?php if (!empty($error)) { ?>
-        <div class="error-message">
-            <p class="error"><?php echo htmlspecialchars($error); ?></p>
+        <div class="login-container">
+            <div class="form-box">
+                <h2>Login</h2>
+                <?php if (!empty($error)) { ?>
+                    <div class="error-message">
+                        <p class="error"><?php echo htmlspecialchars($error); ?></p>
+                    </div>
+                <?php } elseif (!empty($successMessage)) { ?>
+                    <div class="success-message">
+                        <p class="success"><?php echo htmlspecialchars($successMessage); ?></p>
+                    </div>
+                <?php } ?>
+                <form action="login.php" method="post">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <button class="btn" name="login" type="submit">Login</button>
+                    <p>Don't have an account? <a href="register.php">Register here</a></p>
+                </form>
+            </div>
         </div>
-    <?php } elseif (!empty($successMessage)) { ?>
-        <div class="success-message">
-            <p class="success"><?php echo htmlspecialchars($successMessage); ?></p>
-        </div>
-    <?php } ?>
 
-    <div class="content"><h2>Login</h2></div>
-    <section class="form-section">
-        <div class="form-container">
-            <form id="loginForm" name="loginForm" action="login.php" method="post" onsubmit="return validateLogin()">
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <button name="login" type="submit">Login</button>
-            </form>
-        </div>
-        <p>Or create a <a href="register.php">new account here</a></p>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <p>&copy; <?php echo date('Y'); ?> Your Website. All rights reserved.</p>
-        </div>
-    </footer>
+       
+        <?php include('../helpers/footer.html'); ?>
+    </div>
 </body>
 </html>

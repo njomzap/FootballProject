@@ -11,7 +11,7 @@ class Login extends dbConnect {
         $this->password = $password;
 
         $this->dbconn = $this->connect();
-        
+
     }
     public function setEmail($email){
         $this->email = $email;

@@ -29,7 +29,15 @@ if (isset($_POST['save'])) {
             $users->setPassword($passwordHash);
             $users->setIs_admin($is_admin);
 
-            $users->setUser(); 
+            $userId = $users->setUser(); 
+            $_SESSION['user_id'] = $userId;
+            $_SESSION['email'] = $email;
+            $_SESSION['firstname'] = $name;
+            $_SESSION['lastname'] = $lastname;
+            $_SESSION['username'] = $username;
+            $_SESSION['is_admin'] = $is_admin;
+            $_SESSION['loggedin'] = true;
+            header("Location: ../dashboard.php"); 
         } else {
             $error = 'Username or Email already exists.';
         }

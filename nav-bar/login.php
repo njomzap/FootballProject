@@ -29,6 +29,9 @@ if (isset($_POST['login'])) {
                 $_SESSION['is_admin'] = $userData['is_admin'];
                 $_SESSION['loggedin'] = true;
 
+                header ("Location: ../dashboard.php");
+                
+
                 
                 $successMessage = 'Login successful! You are now logged in.';
             } else {

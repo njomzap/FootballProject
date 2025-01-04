@@ -18,7 +18,7 @@ if (isset($_POST['login'])) {
 
             if ($login->validateLogin()) {
                 
-                session_start();
+                
                 $_SESSION['user_email'] = $email;
                 $user = new Users();
                 $userData = $user->getUserByEmail($_SESSION['user_email']);

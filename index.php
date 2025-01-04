@@ -1,3 +1,14 @@
+<?php
+include 'includes/config.php';
+require_once('classes/Matches.php');
+
+$matches = new Matches();
+
+$upcomingMatches = $matches->getMatchesByStatus('scheduled');
+
+$recentResults = $matches->getMatchesByStatus('completed');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,24 +16,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Superliga e Kosovës</title>
 
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="home-page">
     <div class="page-container">
-        <div id="header-placeholder"></div>
-
+       
+        <?php include('helpers/header.html'); ?>
 
         <div class="main-content">
             <h1>Superliga e Kosovës</h1>
             <p>Live Results, Standings, and Updates</p>
         </div>
+        
         <div class="navigation-controls">
             <button id="prev" class="arrow">❮</button>
             <button id="next" class="arrow">❯</button>
         </div>
         
-    
         <section id="recent-results" class="table-wrapper">
             <h2>Recent Results</h2>
             <div class="match-result">
@@ -47,7 +57,6 @@
             </div>
         </section>
         
-       
         <section id="league-standings" class="table-wrapper">
             <h2>League Standings</h2>
             <table>
@@ -73,16 +82,12 @@
                 </tbody>
             </table>
         </section>
+
         
-        
-        
-        
-        
-        
-       
-        <div id="footer-placeholder"></div>
+        <?php include('helpers/footer.html'); ?>
     </div>
-   
+
     <script src="script.js"></script>
 </body>
 </html>
+

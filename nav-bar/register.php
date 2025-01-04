@@ -30,6 +30,7 @@ if (isset($_POST['save'])) {
             $users->setIs_admin($is_admin);
 
             $userId = $users->setUser(); 
+
             $_SESSION['user_id'] = $userId;
             $_SESSION['email'] = $email;
             $_SESSION['firstname'] = $name;
@@ -55,10 +56,10 @@ if (isset($_POST['save'])) {
 </head>
 <body>
     <div class="page-container">
-        <!-- Include Header -->
+        
         <?php include('../helpers/header.html'); ?>
 
-        <!-- Registration Form -->
+        
         <div class="register-container">
             <div class="form-box">
                 <h2>Register</h2>
@@ -94,7 +95,7 @@ if (isset($_POST['save'])) {
             </div>
         </div>
 
-        <!-- Include Footer -->
+       
         <?php include('../helpers/footer.html'); ?>
     </div>
 </body>

@@ -1,5 +1,6 @@
 <?php
-require_once('../includes/db_config.php'); // Include the database connection
+require_once(__DIR__ . '/../includes/db_config.php');
+
 
 class Matches extends dbConnect {
     private $match_id;

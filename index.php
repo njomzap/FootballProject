@@ -7,7 +7,6 @@ $matches = new Matches();
 $upcomingMatches = $matches->getMatchesByStatus('scheduled');
 
 $recentResults = $matches->getMatchesByStatus('completed');
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,29 +31,33 @@ $recentResults = $matches->getMatchesByStatus('completed');
             <button id="prev" class="arrow">❮</button>
             <button id="next" class="arrow">❯</button>
         </div>
-        
+
         <section id="recent-results" class="table-wrapper">
             <h2>Recent Results</h2>
-            <div class="match-result">
-                <p>Team A <strong>3</strong> - <strong>1</strong> Team B</p>
-                <p>Date: 2023-12-01</p>
-            </div>
-            <div class="match-result">
-                <p>Team C <strong>2</strong> - <strong>2</strong> Team D</p>
-                <p>Date: 2023-12-01</p>
-            </div>
+            <?php if (!empty($recentResults)): ?>
+                <?php foreach ($recentResults as $result): ?>
+                    <div class="match-result">
+                        <p><?php echo htmlspecialchars($result['home_team']); ?> <strong><?php echo htmlspecialchars($result['home_score']); ?></strong> - <strong><?php echo htmlspecialchars($result['away_score']); ?></strong> <?php echo htmlspecialchars($result['away_team']); ?></p>
+                        <p>Date: <?php echo htmlspecialchars($result['match_date']); ?></p>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No recent results available.</p>
+            <?php endif; ?>
         </section>
-    
+
         <section id="upcoming-matches" class="table-wrapper">
             <h2>Upcoming Matches</h2>
-            <div class="match">
-                <p>Team A vs Team C</p>
-                <p>Date: 2023-12-03 | Time: 20:00</p>
-            </div>
-            <div class="match">
-                <p>Team E vs Team G</p>
-                <p>Date: 2023-12-04 | Time: 18:00</p>
-            </div>
+            <?php if (!empty($upcomingMatches)): ?>
+                <?php foreach ($upcomingMatches as $match): ?>
+                    <div class="match">
+                        <p><?php echo htmlspecialchars($match['home_team']); ?> vs <?php echo htmlspecialchars($match['away_team']); ?></p>
+                        <p>Date: <?php echo htmlspecialchars($match['match_date']); ?> | Time: <?php echo htmlspecialchars($match['match_time']); ?></p>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No upcoming matches available.</p>
+            <?php endif; ?>
         </section>
         
         <section id="league-standings" class="table-wrapper">
@@ -83,11 +86,11 @@ $recentResults = $matches->getMatchesByStatus('completed');
             </table>
         </section>
 
-        
         <?php include('helpers/footer.php'); ?>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
+
 

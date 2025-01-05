@@ -451,6 +451,122 @@ body {
     background-color: #457b9d;
 }
 
+.matches-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.matches-table th, .matches-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.matches-table th {
+    background-color: #1d3557;
+    color: white;
+    font-weight: bold;
+}
+
+.matches-table td {
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.matches-table td:hover {
+    background-color: #e0e0e0;
+}
+
+.matches-table .match-date {
+    font-weight: bold;
+    color: #457b9d;
+}
+
+.matches-table .match-time {
+    color: #d9534f;
+}
+
+.upcoming-matches {
+    background-color: #457b9d;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.upcoming-matches h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.match-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #1d3557;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.match-card .team {
+    font-size: 1.2em;
+}
+
+.match-card .date-time {
+    font-size: 1em;
+    color: #d9534f;
+}
+
+.match-card .venue {
+    font-style: italic;
+    color: #aaa;
+}
+
+.match-card:hover {
+    background-color: #457b9d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .matches-table th, .matches-table td {
+        padding: 8px;
+    }
+
+    .matches-table th {
+        font-size: 1em;
+    }
+
+    .matches-table td {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 576px) {
+    .match-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .match-card .team {
+        font-size: 1.5em;
+    }
+
+    .match-card .date-time {
+        font-size: 1.2em;
+    }
+}
+
+#upcoming-matches {
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
 
 
 

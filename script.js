@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     console.log("Script loaded successfully!");
 
-   
     initializeMenuToggle();
-
+    initializePagination();
 
     const loginForm = document.getElementById('login-form');
     if (loginForm) {
@@ -27,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
- 
     const registerForm = document.getElementById('register-form');
     if (registerForm) {
         registerForm.addEventListener('submit', function (e) {
@@ -77,15 +75,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (toggleButton && navLinks) {
             toggleButton.addEventListener('click', function () {
-                const isActive = navLinks.classList.toggle('active');
-                toggleButton.classList.toggle('hidden', isActive);
+                navLinks.classList.toggle('active');
             });
 
             const navItems = navLinks.querySelectorAll('a');
             navItems.forEach(item => {
                 item.addEventListener('click', function () {
                     navLinks.classList.remove('active');
-                    toggleButton.classList.remove('hidden');
                 });
             });
 
@@ -111,45 +107,46 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    highlightActiveLink();
-
-    function initializeCarousel() {
-        const sections = document.querySelectorAll('.table-wrapper');
+    function initializePagination() {
         const prevButton = document.getElementById('prev');
         const nextButton = document.getElementById('next');
-        let currentIndex = 0;
+        const tables = document.querySelectorAll('.table-wrapper');
+        let currentPage = 0;
 
-        if (!sections.length || !prevButton || !nextButton) {
-            console.warn("Carousel elements not found!");
-            return;
+        function showTable(pageIndex) {
+            tables.forEach((table, index) => {
+                if (index === pageIndex) {
+                    table.classList.add('active');
+                } else {
+                    table.classList.remove('active');
+                }
+            });
         }
 
-        function updateSections() {
-            sections.forEach((section, index) => {
-                section.classList.toggle('active', index === currentIndex);
+        if (prevButton && nextButton) {
+            prevButton.addEventListener('click', function () {
+                if (currentPage > 0) {
+                    currentPage--;
+                    showTable(currentPage);
+                }
             });
 
-            prevButton.disabled = currentIndex === 0;
-            nextButton.disabled = currentIndex === sections.length - 1;
+            nextButton.addEventListener('click', function () {
+                if (currentPage < tables.length - 1) {
+                    currentPage++;
+                    showTable(currentPage);
+                }
+            });
+
+            showTable(currentPage); 
+            console.log("Pagination initialized!");
+        } else {
+            console.warn("Pagination buttons not found!");
         }
-
-        prevButton.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateSections();
-            }
-        });
-
-        nextButton.addEventListener('click', () => {
-            if (currentIndex < sections.length - 1) {
-                currentIndex++;
-                updateSections();
-            }
-        });
-
-        updateSections();
     }
 
-    initializeCarousel();
+    highlightActiveLink();
 });
+
+
 

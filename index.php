@@ -61,30 +61,33 @@ $recentResults = $matches->getMatchesByStatus('completed');
         </section>
         
         <section id="league-standings" class="table-wrapper">
-            <h2>League Standings</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Team</th>
-                        <th>Points</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Team A</td>
-                        <td>45</td>
-                    </tr>
-                    <tr>
-                        <td>Team C</td>
-                        <td>42</td>
-                    </tr>
-                    <tr>
-                        <td>Team G</td>
-                        <td>40</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+    <h2>League Standings</h2>
+    <div class="standings">
+        <table>
+            <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Team A</td>
+                    <td>45</td>
+                </tr>
+                <tr>
+                    <td>Team C</td>
+                    <td>42</td>
+                </tr>
+                <tr>
+                    <td>Team G</td>
+                    <td>40</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
 
         <?php include('helpers/footer.php'); ?>
     </div>

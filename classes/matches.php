@@ -66,6 +66,13 @@ class Matches extends dbConnect {
         $stmt->execute([$status]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getCompletedMatches() {
+        $sql = "SELECT * FROM matches WHERE status = 'completed'";
+        $stmt = $this->connect()->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
 }
 ?>
 

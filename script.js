@@ -1,48 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     console.log("Script loaded successfully!");
 
-    
-    const headerPlaceholder = document.getElementById('header-placeholder');
-    if (headerPlaceholder) {
-        const currentPath = window.location.pathname;
-        const headerPath = currentPath.includes('/nav-bar/') ? '../helpers/header.html' : 'helpers/header.html';
+   
+    initializeMenuToggle();
 
-        fetch(headerPath)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.text();
-            })
-            .then(data => {
-                headerPlaceholder.innerHTML = data;
-                initializeMenuToggle();
-                highlightActiveLink();
-            })
-            .catch(err => console.error('Error loading header:', err));
-    } else {
-        console.error('Header placeholder not found!');
-    }
-    const footerPlaceholder = document.getElementById('footer-placeholder');
-    if (footerPlaceholder) {
-        const currentPath = window.location.pathname;
-        const footerPath = currentPath.includes('/nav-bar/') ? '../helpers/footer.html' : 'helpers/footer.html';
 
-        fetch(footerPath)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.text();
-            })
-            .then(data => {
-                footerPlaceholder.innerHTML = data;
-            })
-            .catch(err => console.error('Error loading footer:', err));
-    } else {
-        console.error('Footer placeholder not found!');
-    }
-    
     const loginForm = document.getElementById('login-form');
     if (loginForm) {
         loginForm.addEventListener('submit', function (e) {
@@ -65,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    
+ 
     const registerForm = document.getElementById('register-form');
     if (registerForm) {
         registerForm.addEventListener('submit', function (e) {
@@ -109,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    
     function initializeMenuToggle() {
         const toggleButton = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
@@ -134,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-   
     function highlightActiveLink() {
         const navLinkItems = document.querySelectorAll('.nav-links a');
 
@@ -151,7 +111,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    
+    highlightActiveLink();
+
     function initializeCarousel() {
         const sections = document.querySelectorAll('.table-wrapper');
         const prevButton = document.getElementById('prev');
@@ -191,3 +152,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     initializeCarousel();
 });
+

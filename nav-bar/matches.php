@@ -1,3 +1,4 @@
+<?php include('../includes/config.php'); ?>
 <?php include('../helpers/header.php'); ?> 
 
 <!DOCTYPE html>

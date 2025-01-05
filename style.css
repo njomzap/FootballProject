@@ -328,8 +328,8 @@ body {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.recent-results, .upcoming-matches, .standings-overview {
-    padding: 100px;
+.recent-results, .upcoming-matches, .league-standings {
+    padding: 50px 100px;
     margin: 20px auto;
     max-width: 900px;
     text-align: center;
@@ -340,7 +340,7 @@ body {
 
 #recent-results {
     color: #1d3557;
-    padding: 100px;
+    padding: 50px 100px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -358,7 +358,7 @@ body {
 
 #upcoming-matches {
     color: #1d3557;
-    padding: 100px;
+    padding: 50px 100px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -376,7 +376,7 @@ body {
 
 #league-standings {
     color: #1d3557;
-    padding: 150px;
+    padding: 50px 100px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center; 
@@ -384,14 +384,14 @@ body {
 
 #league-standings .standings {
     padding: 10px;
-    margin-top: 20px; 
+    margin-top: 10px; 
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #league-standings table {
     width: 100%; 
-    margin-top: 20px;
+    margin-top: 10px;
     border-collapse: collapse; 
 }
 
@@ -404,6 +404,29 @@ body {
 
 #league-standings th {
     background-color: #457b9d; 
+    color: white;
+}
+
+.navigation-controls {
+    display: flex;
+    justify-content: space-between; /* Aligns the buttons to the left and right */
+    width: 100%;
+    margin-top: 20px;
+}
+
+.arrow {
+    font-size: 1.8em;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #1d3557;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.arrow:hover {
+    background-color: #457b9d;
     color: white;
 }
 

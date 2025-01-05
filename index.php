@@ -21,7 +21,7 @@ $recentResults = $matches->getMatchesByStatus('completed');
 <body class="home-page">
     <div class="page-container">
        
-        <?php include('helpers/header.html'); ?>
+        <?php include('helpers/header.php'); ?>
 
         <div class="main-content">
             <h1>Superliga e Kosovës</h1>
@@ -84,7 +84,7 @@ $recentResults = $matches->getMatchesByStatus('completed');
         </section>
 
         
-        <?php include('helpers/footer.html'); ?>
+        <?php include('helpers/footer.php'); ?>
     </div>
 
     <script src="script.js"></script>

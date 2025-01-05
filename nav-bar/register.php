@@ -57,7 +57,7 @@ if (isset($_POST['save'])) {
 <body>
     <div class="page-container">
         
-        <?php include('../helpers/header.html'); ?>
+        <?php include('../helpers/header.php'); ?>
 
         
         <div class="register-container">
@@ -96,7 +96,7 @@ if (isset($_POST['save'])) {
         </div>
 
        
-        <?php include('../helpers/footer.html'); ?>
+        <?php include('../helpers/footer.php'); ?>
     </div>
 </body>
 </html>

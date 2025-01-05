@@ -53,7 +53,7 @@ if (isset($_POST['login'])) {
 <body>
     <div class="page-container">
        
-        <?php include('../helpers/header.html'); ?>
+        <?php include('../helpers/header.php'); ?>
 
         <div class="login-container">
             <div class="form-box">
@@ -83,7 +83,7 @@ if (isset($_POST['login'])) {
         </div>
 
        
-        <?php include('../helpers/footer.html'); ?>
+        <?php include('../helpers/footer.php'); ?>
     </div>
 </body>
 </html>

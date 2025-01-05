@@ -1,4 +1,4 @@
-<?php include('../helpers/header.html'); ?> 
+<?php include('../helpers/header.php'); ?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,10 +14,10 @@
             <h1>Upcoming Matches</h1>
             <p>Details about upcoming matches will be displayed here.</p>
         </div>
+    
+    
+    <?php include('../helpers/footer.php'); ?> 
     </div>
-    
-    <?php include('../helpers/footer.html'); ?> 
-    
     <script src="../script.js"></script> 
 </body>
 </html>

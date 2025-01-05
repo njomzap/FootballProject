@@ -1,4 +1,4 @@
-<?php include('../helpers/header.html'); ?> 
+<?php include('../helpers/header.php'); ?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,10 +14,10 @@
             <h1>About Superliga</h1>
             <p>Welcome to the Superliga. Here you can learn more about our teams, matches, and history.</p>
         </div>
+    
+    
+    <?php include('../helpers/footer.php'); ?> 
     </div>
-    
-    <?php include('../helpers/footer.html'); ?> 
-    
     <script src="../script.js"></script> 
 </body>
 </html>

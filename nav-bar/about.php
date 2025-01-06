@@ -13,12 +13,11 @@
     <div class="page-container">
         <div class="main-content">
             <h1>About Superliga</h1>
-            <p>Welcome to the Superliga. Here you can learn more about our teams, matches, and history.</p>
+            <p>Welcome to Kosovan Superleague. Here you can learn more about our teams, matches, and history.</p>
         </div>
     
     
     <?php include('../helpers/footer.php'); ?> 
     </div>
-    <script src="../script.js"></script> 
 </body>
 </html>

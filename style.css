@@ -571,4 +571,35 @@ body {
     .match-card .venue {
         flex-basis: 100%;
     }
+
+    #teams-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        text-align: left;
+    }
+    
+    #teams-table th, #teams-table td {
+        padding: 12px;
+        border: 1px solid #ddd;
+    }
+    
+    #teams-table th {
+        background-color: #457b9d;
+        color: white;
+    }
+    
+    #teams-table tr:nth-child(even) {
+        background-color: #f4f4f4;
+    }
+    
+    #teams-table tr:hover {
+        background-color: #e0e0e0;
+    }
+    
+    #teams-table img {
+        border-radius: 5px;
+    }
+    
+
 }

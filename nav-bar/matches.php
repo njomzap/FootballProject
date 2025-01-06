@@ -1,7 +1,9 @@
+<?php include('../includes/config.php'); ?> 
 <?php  
 include('../includes/db_config.php'); 
 include('../helpers/header.php'); 
-include_once('../classes/matches.php'); 
+include_once('../classes/matches.php');
+
 
 $api_key = "e87b42d711888053dfa597e20cab2cd4"; 
 $base_url = "https://v3.football.api-sports.io";
@@ -90,7 +92,6 @@ usort($matches, function ($a, $b) {
     </div>
 
     <?php include('../helpers/footer.php'); ?> 
-    <script src="../script.js"></script> 
 </body>
 </html>
 

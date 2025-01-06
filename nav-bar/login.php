@@ -84,6 +84,7 @@ if (isset($_POST['login'])) {
 
        
         <?php include('../helpers/footer.php'); ?>
+        
     </div>
 </body>
 </html>

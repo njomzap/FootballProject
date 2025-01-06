@@ -4,7 +4,7 @@ include('../includes/db_config.php');
 include('../helpers/header.php'); 
  
 
-$api_key = "e87b42d711888053dfa597e20cab2cd4"; 
+$api_key = "199e1bac9e0c00c017eaaa2ca3478b9f"; 
 $base_url = "https://v3.football.api-sports.io/";
 
 $league_id = 664; 

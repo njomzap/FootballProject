@@ -338,13 +338,13 @@ body {
     margin: 20px auto;
     max-width: 900px;
     text-align: center;
-    background-color: #1d3557;
+    background-color: #646d7a;
     border-radius: 8px;
     color: #1d3557;
 }
 
 #recent-results {
-    color: #1d3557;
+    color: #5f6164;
     padding: 50px 100px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -541,6 +541,10 @@ body {
     text-align: center;
 }
 
+.match-result p {
+    color: #fff;
+}
+
 @media (max-width: 768px) {
     .match-card {
         flex-direction: column;
@@ -600,6 +604,32 @@ body {
     #teams-table img {
         border-radius: 5px;
     }
-    
+}
+#teams-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: left;
+}
 
+#teams-table th, #teams-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+#teams-table th {
+    background-color: #457b9d;
+    color: white;
+}
+
+#teams-table tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+#teams-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+#teams-table img {
+    border-radius: 5px;
 }

@@ -172,6 +172,11 @@ footer a:hover {
 
 .main-content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 body.home-page {
@@ -566,4 +571,130 @@ body {
     .match-card .venue {
         flex-basis: 100%;
     }
+    
+.teams-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+    padding: 20px;
+    background: linear-gradient(135deg, #f4f4f9, #e9eff1);
+}
+
+.teams-form-box {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 50%;
+    text-align: center;
+    transform: translateY(-30px);
+    transition: all 0.3s ease-in-out;
+}
+
+.teams-form-box:hover {
+    transform: translateY(0);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.teams-form-box h3 {
+    margin-bottom: 30px;
+    color: #1d3557;
+    font-size: 2.2em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.teams-form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    position: relative;
+}
+
+.teams-form-group label {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #1d3557;
+    font-weight: 600;
+}
+
+.teams-form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.teams-form-group input:focus {
+    border-color: #457b9d;
+    box-shadow: 0 0 10px rgba(69, 123, 157, 0.3);
+    outline: none;
+}
+
+.teams-form-btn {
+    background-color: #1d3557;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.teams-form-btn:hover {
+    background-color: #457b9d;
+    transform: translateY(-2px);
+}
+
+.error-message {
+    color: #d9534f;
+    font-size: 0.9em;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+p a {
+    color: #1d3557;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .teams-form-container {
+        padding: 10px;
+    }
+
+    .teams-form-box {
+        padding: 30px 20px;
+        width: 90%;
+    }
+
+    .teams-form-box h2 {
+        font-size: 1.8em;
+    }
+
+    .teams-form-group input {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .teams-form-btn {
+        font-size: 18px;
+    }
+}
+
+
 }

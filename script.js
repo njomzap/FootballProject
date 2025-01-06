@@ -145,8 +145,59 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    const addTeamForm = document.getElementById('addTeamForm');
+    if (addTeamForm) {
+        addTeamForm.addEventListener('submit', function (e) {
+            const name = document.querySelector('#addTeamForm #name').value.trim();
+            const stadium = document.querySelector('#addTeamForm #stadium').value.trim();
+            const city = document.querySelector('#addTeamForm #city').value.trim();
+            const founded = document.querySelector('#addTeamForm #founded').value.trim();
+            const manager = document.querySelector('#addTeamForm #manager').value.trim();
+            const country = document.querySelector('#addTeamForm #country').value.trim();
+
+            if (!name) {
+                alert('Team Name is required!');
+                e.preventDefault();
+                return;
+            }
+
+            if (!stadium) {
+                alert('Stadium is required!');
+                e.preventDefault();
+                return;
+            }
+
+            if (!city) {
+                alert('City is required!');
+                e.preventDefault();
+                return;
+            }
+
+            if (!founded || isNaN(founded)) {
+                alert('Founded year is required and must be a number!');
+                e.preventDefault();
+                return;
+            }
+
+            if (!manager) {
+                alert('Manager is required!');
+                e.preventDefault();
+                return;
+            }
+
+            if (!country) {
+                alert('Country is required!');
+                e.preventDefault();
+                return;
+            }
+
+            console.log('Add team form validation passed');
+        });
+    }
+
     highlightActiveLink();
 });
+
 
 
 

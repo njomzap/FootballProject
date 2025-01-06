@@ -2,13 +2,13 @@
 require_once(__DIR__ . '/../includes/db_config.php');
 
 class Teams extends dbConnect {
-    public $id;
-    public $name;
-    public $stadium;
-    public $city;
-    public $founded;
-    public $manager;
-    public $country;
+    private $id;
+    private $name;
+    private $stadium;
+    private $city;
+    private $founded;
+    private $manager;
+    private $country;
 
     public function __construct($name = null, $stadium = null, $city = null, $founded = null, $manager = null, $country = null) {
         $this->name = $name;

@@ -20,41 +20,10 @@ $allTeams = $teams->getAllTeams();
     <div class="page-container">
         <div class="main-content">
             <h1>Teams in Superliga</h1>
-            
-            <a href="../add_team.php">Add New Team</a>
-            
-            <?php if (!empty($allTeams)) : ?>
-                <table class="teams-table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Stadium</th>
-                            <th>City</th>
-                            <th>Founded</th>
-                            <th>Manager</th>
-                            <th>Country</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($allTeams as $team) : ?>
-                            <tr>
-                                <td><?php echo htmlspecialchars($team['name']); ?></td>
-                                <td><?php echo htmlspecialchars($team['stadium']); ?></td>
-                                <td><?php echo htmlspecialchars($team['city']); ?></td>
-                                <td><?php echo htmlspecialchars($team['founded']); ?></td>
-                                <td><?php echo htmlspecialchars($team['manager']); ?></td>
-                                <td><?php echo htmlspecialchars($team['country']); ?></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            <?php else : ?>
-                <p>No teams found in the database.</p>
-            <?php endif; ?>
-        </div>
+            </div>
     
         <?php include('../helpers/footer.php'); ?>
-    </div>
+    
     <script src="../script.js"></script>
 </body>
 </html>
